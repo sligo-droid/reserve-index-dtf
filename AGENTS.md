@@ -1,22 +1,27 @@
 # DTFS Worker Instructions
 
-This repository is the Sligo Labs private DTFS project copy initialized from `reserve-protocol/reserve-index-dtf`.
+This branch carries Sligo-local project instructions for the Discord channel named `dtfs`.
+
+Important: these files are **not** intended for upstream Reserve Protocol PRs. Keep Sligo-only files on `sligo/project-docs` or in local worker context; keep contribution branches based on `upstream/main` / `origin/main` clean of `AGENTS.md` and `docs/` unless the upstream change explicitly needs documentation files that already exist upstream.
 
 ## Source of truth
 
-- Canonical Sligo repository: `git@github.com:sligo-labs/dtfs.git`
+- Public fork / origin: `git@github.com:sligo-droid/reserve-index-dtf.git`
 - Upstream source repository: `https://github.com/reserve-protocol/reserve-index-dtf.git`
-- Repo state: `docs/project-state.md`
-- Product/architecture context: `docs/context.md`
+- Canonical local checkout: `/home/droid/.hermes/workspace/dtfs`
+- Sligo project docs branch: `sligo/project-docs`
+- Repo state on that branch: `docs/project-state.md`
+- Product/architecture context on that branch: `docs/context.md`
 - Notion project page: `https://app.notion.com/p/DTFS-3806381fd20281f6be7dfae873afcb09`
 
 ## Git workflow
 
 - Treat `/home/droid/.hermes/workspace/dtfs` as the canonical clean checkout for inspection and default-branch sync only.
 - Do implementation work in dedicated worktrees under `/home/droid/workspaces/`.
-- Use branches and PRs for changes after initial import; merge only after relevant checks pass or blockers are explicitly documented.
-- Keep `origin` pointed at `sligo-labs/dtfs` and `upstream` pointed at `reserve-protocol/reserve-index-dtf`.
-- Do not make this repository public. The upstream repository is public; this Sligo copy is private by policy.
+- Keep `origin` pointed at `sligo-droid/reserve-index-dtf` and `upstream` pointed at `reserve-protocol/reserve-index-dtf`.
+- For upstream PRs, create a branch from `upstream/main` or the fork's `main`, make only the intended upstream code/docs change, push to `origin`, and open the PR against `reserve-protocol/reserve-index-dtf`.
+- Do not merge `sligo/project-docs` into `main` or into upstream contribution branches.
+- If Sligo docs accidentally appear in an upstream PR diff, stop and repair by rebasing/cherry-picking the intended commits onto a fresh branch from `upstream/main`.
 
 ## Development commands
 
@@ -47,4 +52,4 @@ Use provider/platform secret stores for values. Never store secret values in Git
 
 - Preserve upstream architecture unless a task explicitly asks for a Sligo-specific change.
 - Before edits, inspect immediate callers, tests, workflows, and deployment scripts relevant to the change.
-- For upstream sync work, fetch `upstream`, review incoming diffs, and reconcile deliberately instead of blindly overwriting Sligo-local project docs.
+- Keep Sligo operating context in this docs branch, Notion, Discord thread context, or local worker prompts — not in upstream contribution diffs.

@@ -1,18 +1,19 @@
 # DTFS Context
 
-Last updated: 2026-06-15 13:59 UTC
+Last updated: 2026-06-15 14:20 UTC
 
 ## Project identity
 
-DTFS is the Sligo Labs private project channel/repository initialized from Reserve Protocol's `reserve-index-dtf` codebase.
+DTFS is the Discord channel/project name for Sligo's working fork of Reserve Protocol's `reserve-index-dtf` codebase.
 
-- Sligo GitHub repository: `https://github.com/sligo-labs/dtfs`
+- Public fork / origin: `https://github.com/sligo-droid/reserve-index-dtf`
 - Upstream repository: `https://github.com/reserve-protocol/reserve-index-dtf`
 - Notion project page: `https://app.notion.com/p/DTFS-3806381fd20281f6be7dfae873afcb09`
 - Canonical local checkout: `/home/droid/.hermes/workspace/dtfs`
 - Discord channel: `#dtfs`
+- Sligo-only docs branch: `sligo/project-docs`
 
-This Sligo repository is a private mirror rather than a public GitHub fork. GitHub forks of public repositories are public by default; Sligo client/project repositories are private unless a human explicitly changes visibility.
+The fork's `main` branch should stay clean for upstream contribution work. Sligo-local operating docs (`AGENTS.md`, this file, and `docs/project-state.md`) live on `sligo/project-docs` and should not be merged into `main` or included in upstream PRs.
 
 ## Upstream product summary
 
@@ -65,6 +66,6 @@ Observed config/secret names:
 ## Current Sligo-local convention
 
 - Keep upstream code behavior intact unless there is an explicit Sligo task.
-- Keep Sligo-local operating docs (`AGENTS.md`, `docs/context.md`, `docs/project-state.md`) current and compact.
-- Use `origin` for the private Sligo repo and `upstream` for Reserve Protocol's source repo.
-- Review upstream syncs carefully so Sligo-local docs are not removed accidentally.
+- Use `origin` for the public Sligo Droid fork and `upstream` for Reserve Protocol's source repo.
+- Keep Sligo project docs on `sligo/project-docs`, not on fork `main`.
+- For upstream PRs, branch from `upstream/main`, push only intended upstream changes to `origin`, and verify the upstream compare does not include Sligo-only files.
